@@ -1,8 +1,12 @@
-'use strict';
-var http = require('http');
+const restify = require('restify');
 var port = process.env.PORT || 1337;
 
-http.createServer(function (req, res) {
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end('Hello World\n');
-}).listen(port);
+function respond(req, res, next) {
+    res.send('Your number is: ' + req.params.number);
+    next();
+}
+
+var server = restify.createServer();
+server.get('/:number', respond);
+
+server.listen(port);
