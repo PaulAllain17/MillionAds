@@ -1,8 +1,9 @@
 const restify = require('restify');
+var primeNumber = require('./primeNumberModule');
 var port = process.env.PORT || 1337;
 
 function respond(req, res, next) {
-    res.send('Your number is: ' + req.params.number);
+    res.send(primeNumber.closest(req.params.number));
     next();
 }
 
