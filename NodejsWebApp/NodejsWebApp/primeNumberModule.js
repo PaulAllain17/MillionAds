@@ -1,8 +1,14 @@
 ﻿exports.closest = function (number) {
+    if (number < 2) {
+        return 'Your number must be greater or equal to 2.';
+    }
+    if (isPrime(number)) {
+        return 'Your number : ' + number + ' is a prime number.';
+    }
     let lowerPrime, higherPrime;
     let counter = 1;
-    if (isPrime(number)) {
-        return 'You number : ' + number + ' is a prime number.';
+    if (number % 2 !== 0) {
+        counter = 2;
     }
     while (!(lowerPrime && higherPrime)) {
 
@@ -16,7 +22,7 @@
                 lowerPrime = number - counter;
             }
         }
-        counter++
+        counter += 2;
     }
 
     return 'The lower prime number is: ' + lowerPrime +
