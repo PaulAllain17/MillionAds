@@ -1,6 +1,6 @@
 ﻿exports.closest = function (number) {
-    var lowerPrime, higherPrime;
-    var counter = 1;
+    let lowerPrime, higherPrime;
+    let counter = 1;
     if (isPrime(number)) {
         return 'You number : ' + number + ' is a prime number.';
     }
@@ -24,7 +24,7 @@
 };
 
 function isPrime(value) {
-    for (var i = 2; i < value; i++) {
+    for (let i = 2; i < value; i++) {
         if (value % i === 0) {
             return false;
         }
