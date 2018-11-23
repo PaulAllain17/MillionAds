@@ -5,6 +5,22 @@
     if (isPrime(number)) {
         return 'Your number : ' + number + ' is a prime number.';
     }
+    let primes = getClosestPrimeNumbers(number);
+
+    return 'The lower prime number is: ' + primes[0] +
+        ' The higher prime number is: ' + primes[1];
+};
+
+function isPrime(value) {
+    for (let i = 2; i < value; i++) {
+        if (value % i === 0) {
+            return false;
+        }
+    }
+    return value > 1;
+}
+
+function getClosestPrimeNumbers(number) {
     let lowerPrime, higherPrime;
     let counter = 1;
     if (number % 2 !== 0) {
@@ -25,15 +41,5 @@
         counter += 2;
     }
 
-    return 'The lower prime number is: ' + lowerPrime +
-        ' The higher prime number is: ' + higherPrime;
-};
-
-function isPrime(value) {
-    for (let i = 2; i < value; i++) {
-        if (value % i === 0) {
-            return false;
-        }
-    }
-    return value > 1;
+    return [lowerPrime, higherPrime];
 }
