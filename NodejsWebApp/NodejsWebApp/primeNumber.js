@@ -1,7 +1,4 @@
 ﻿exports.closest = (number) => {
-    if (number < 2) {
-        return 'Your number must be greater or equal to 2.';
-    }
     if (isPrime(number)) {
         return 'Your number : ' + number + ' is a prime number.';
     }
