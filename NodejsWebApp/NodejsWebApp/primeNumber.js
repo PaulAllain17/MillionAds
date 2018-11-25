@@ -9,7 +9,8 @@
 };
 
 isPrime = (value) => {
-    for (let i = 2; i < value; i++) {
+    const sqrtOfValue = parseInt(Math.sqrt(value));
+    for (let i = 2; i < sqrtOfValue + 1; i++) {
         if (value % i === 0) {
             return false;
         }
