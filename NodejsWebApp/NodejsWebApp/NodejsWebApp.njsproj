@@ -36,6 +36,10 @@
     <Compile Include="requestHandler.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="requestHandler.test.js">
+      <SubType>Code</SubType>
+      <TestFramework>Mocha</TestFramework>
+    </Compile>
     <Compile Include="server.js" />
     <Compile Include="primeNumber.test.js">
       <SubType>Code</SubType>
