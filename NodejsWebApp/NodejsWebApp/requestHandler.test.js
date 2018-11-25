@@ -15,4 +15,30 @@ describe('The request handler module', function () {
         requestHandler.process(req, resWithSpy);
         assert.ok(resWithSpy.send.calledWith('Please give a number.'));
     });
+
+    it('asks for number if the user passed something else than a number', function () {
+        const resWithSpy = {
+            send: sinon.spy()
+        };
+        const req = {
+            params: {
+                number: 'test2'
+            }
+        };
+        requestHandler.process(req, resWithSpy);
+        assert.ok(resWithSpy.send.calledWith('Please give a number.'));
+    });
+
+    it('sends the closest prime numbers if the user provides a number', function () {
+        const resWithSpy = {
+            send: sinon.spy()
+        };
+        const req = {
+            params: {
+                number: '4'
+            }
+        };
+        requestHandler.process(req, resWithSpy);
+        assert.ok(resWithSpy.send.calledWith('The lower prime number is: 3 The higher prime number is: 5'));
+    });
 });
