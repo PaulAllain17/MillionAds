@@ -6,6 +6,10 @@
   "author": {
     "name": ""
   },
+  "scripts": {
+    "test": "npm run test-unit",
+    "test-unit": "mocha *.test.js"
+  },
   "dependencies": {
     "mocha": "^5.2.0",
     "restify": "^7.2.3",
