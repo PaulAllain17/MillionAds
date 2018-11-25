@@ -1,14 +1,9 @@
 const restify = require('restify');
-const primeNumber = require('./primeNumberModule');
+const requestHandler = require('./requestHandler');
 const port = process.env.PORT || 1337;
 
 function respond(req, res, next) {
-    let entry = req.params.number;
-    if (!entry || isNaN(parseFloat(entry))) {
-        res.send('Please give a number.');
-    } else {
-        res.send(primeNumber.closest(parseFloat(entry)));
-    }
+    requestHandler.process(req, res);
     next();
 }
 

@@ -1,5 +1,5 @@
 ﻿const assert = require('assert');
-const primeNumber = require('./primeNumberModule');
+const primeNumber = require('./primeNumber');
 
 describe('The prime number module', function () {
 

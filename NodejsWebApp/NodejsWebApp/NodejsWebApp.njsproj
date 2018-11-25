@@ -30,11 +30,14 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="primeNumberModule.js">
+    <Compile Include="primeNumber.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="requestHandler.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="server.js" />
-    <Compile Include="primeNumberModule.test.js">
+    <Compile Include="primeNumber.test.js">
       <SubType>Code</SubType>
       <TestFramework>Mocha</TestFramework>
     </Compile>
