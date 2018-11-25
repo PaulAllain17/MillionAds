@@ -2,7 +2,7 @@ const restify = require('restify');
 const requestHandler = require('./requestHandler');
 const port = process.env.PORT || 1337;
 
-function respond(req, res, next) {
+respond = (req, res, next) => {
     requestHandler.process(req, res);
     next();
 }

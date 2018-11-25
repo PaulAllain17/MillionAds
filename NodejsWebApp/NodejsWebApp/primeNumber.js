@@ -1,4 +1,4 @@
-﻿exports.closest = function (number) {
+﻿exports.closest = (number) => {
     if (number < 2) {
         return 'Your number must be greater or equal to 2.';
     }
@@ -11,7 +11,7 @@
         ' The higher prime number is: ' + primes[1];
 };
 
-function isPrime(value) {
+isPrime = (value) => {
     for (let i = 2; i < value; i++) {
         if (value % i === 0) {
             return false;
@@ -20,7 +20,7 @@ function isPrime(value) {
     return value > 1;
 }
 
-function getClosestPrimeNumbers(number) {
+getClosestPrimeNumbers = (number) => {
     let lowerPrime, higherPrime;
     let counter = 1;
     if (number % 2 !== 0) {
